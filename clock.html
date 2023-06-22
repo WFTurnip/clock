@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" /> 
+  </head>
+  <body>
+    <h1>ぐるぐる十干十二支</h1>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1000"
+      height="1000"
+    >
+      <circle
+        id="a"
+        cx="250"
+        cy="250"
+        r="200"
+        style="fill: none"
+        transform="rotate(-108 250 250)"
+      />
+      <circle
+        id="b"
+        cx="250"
+        cy="250"
+        r="150"
+        style="fill: none"
+        transform="rotate(-105 250 250)"
+      />
+      <text
+        font-family="Baoli TC"
+        font-size="50"
+        lengthAdjust="spacingAndGlyphs"
+        textLength="1256.637"
+      >
+        <textPath href="#a">甲乙丙丁戊己庚辛壬癸</textPath>
+      </text>
+      <text
+        font-family="Baoli TC"
+        font-size="50"
+        lengthAdjust="spacingAndGlyphs"
+        textLength="942.478"
+      >
+        <textPath href="#b">子丑寅卯辰巳午未申酉戌亥</textPath>
+      </text>
+    </svg>
+    <script>
+      // SVG要素の取得
+      const svgElementA = document.getElementById("a");
+      const svgElementB = document.getElementById("b");
+
+      // 初期の回転角度を設定
+      let rotationAngleA = -108;
+      let rotationAngleB = -105;
+
+      // 回転関数
+      function rotateSVG() {
+        // 回転角度を更新
+        rotationAngleA -= 36;
+        rotationAngleB -= 30;
+
+        // SVG要素に回転角度を適用
+        svgElementA.setAttribute(
+          "transform",
+          `rotate(${rotationAngleA} 250 250)`
+        );
+        svgElementB.setAttribute(
+          "transform",
+          `rotate(${rotationAngleB} 250 250)`
+        );
+      }
+
+      // 1秒ごとに回転関数を実行
+      setInterval(rotateSVG, 1000);
+    </script>
+  </body>
+  <style>
+    h1 {
+      font-family: "Baoli TC";
+    }
+  </style>
+</html>
