@@ -1,2 +1,3 @@
 # clock
-## he is not gay
+
+Firefoxでしか動作しないです。
